@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Needed Tagd-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Oswald" rel="stylesheet">
+
+    <title>
+        About Trail-E
+    </title>
+    
+    <!-- Bulma StyleSheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    
+    <!-- FontAwesome -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    
+    <!-- firebase tag -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Stylesheet tags -->
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+</head>
+<body id = "bodyBack">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-item has-text-centered">
+                <h1 class="title has-text-centered is-size-1 light">
+                    <!-- <i class="fas fa-map-signs"></i>
+                        &nbsp; -->
+                    TRAIL-E
+                </h1>
+            </div>
+            <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald light is-size-4" href="index.html">
+                <i class="fas fa-home"></i>
+                &nbsp; Home
+            </a>
+            <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald light is-size-4" href="about.html">
+                <i class="fas fa-book"></i>
+                &nbsp; About
+            </a>
+        </div>
+    </nav>
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class = "tile is-vertical is-parent is-6">
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        About our Project
+                    </h1>
+                    <div class = "content">
+                        <p>
+                            The purpose of TRAIL-E is to find weather information and information about outdoor recreational trails for a specified location. This location may be the user’s location or one they may enter manually to search. Besides showing weather and trail information, TRAIL-E also displays an area for the user to leave feedback about different trails.
+                        </p>
+                        <p>
+                            TRAIL-E is designed with the user experience in mind. Our project integrates a multitude of different information into a simplistic User Interface. TRAIL-E allows the user to save time and spend more time exploring the trails!
+                        </p>
+                    </div>
+                </article>
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        About Our Workflow / using Git
+                    </h1>
+                    <div class = "content">
+                        <p>
+                            Our git repository was the first thing we created for our project! We created a test branch, and we all created our own branches as well. We used these branches to test out different code functionalities.
+                        </p>
+                        <p>
+                            Before this project, none of us had much experience with using Github and the git workflow to complete a group project. The test branch and individual branches were helpful in developing our understanding of Github. After we each got our work visualized on the test branch, we were able to push a functioning project to the master branch, and from there we just had to update to tweak bug and performance issues.
+                        </p>
+                        <p>
+                            Everyone in our group had a different webpage functionality to focus on, so that we could attain the highest possible functionality for each part of our webpage.
+                        </p>
+                        <ul>
+                            <li>
+                                Ben focused on the TrailAPI.
+                            </li>
+                            <li>
+                                Chelsea focused on Bulma CSS Framework
+                            </li>
+                            <li>
+                                Ned focused on the Google Maps API
+                            </li>
+                            <li>
+                                Rishikesh focused on the Weather Underground API.
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        Project Requirements:
+                    </h1>
+                    <div class = "content">
+                        <table class = "table is-narrow is-bordered is-striped">
+                            <tbody class = "has-text-centered">
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must uses at least two APIs
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must use AJAX to pull data
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must utilize at least one new library or technology that we haven’t discussed
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must have a polished frontend / UI
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must meet good quality coding standards (indentation, scoping, naming)
+                                    </td>
+                                </tr>                                    <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must NOT use alerts, confirms, or prompts (look into modals!)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must have some sort of repeating element (table, columns, etc)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must use Bootstrap or Alternative CSS Framework
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must be Deployed (GitHub Pages or Firebase)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-check-square"></i>
+                                    </td>
+                                    <td>
+                                        Must have User Input Validation
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </div>
+            <div class = "tile is-vertical is-parent is-6">
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        About Bulma
+                    </h1>
+                    <div class = "content">
+                        <p>
+                            Bulma is an open source CSS Framework that uses flexbox to create responsive, mobile-first design elements. It allows simple styling based on columns and tile elements.
+                        </p>
+                        <p>
+                            TRAIL-E uses Bulma for page design. The internal page elements are styles as Bulma tile elements. These elements can contain about anything and are responsive to page size. The navbar, tables and footer are both Bulma styled as well.
+                        </p>
+                        <p>
+                            The biggest difficulty with Bulma was learning the new required classes for styling. I also ran into some errors regarding spacing / alignment of some elements within their parent elements. Furthermore, while I found the Bulma class names to be informative and helpful, they also tend to be wordy instead of concise like some other frameworks.
+                        </p>
+                    </div>
+                </article>
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        About Google Maps API
+                    </h1>
+                    <div class = "content">
+                        <p>
+                            The Google Maps API is unlike any other API we have seen so far. It is such a large and inclusive library that it requires a variety of special formatting to work properly.
+                        </p>
+                        <p>
+                            The Google Maps API was used to display a map within our webpage. This includes the addition of pins to the map to display trail locations.
+                        </p>
+                        <p>
+                            Due to these special requirements, we dealt with a number of console errors not specifically related to our code. These errors included CORS errors and errors with the Maps API communicating with the TrailAPI. The Map display cannot show markers until the TrailsAPI call comes back.
+                        </p>
+                    </div>
+                </article>
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        About Weather Underground API
+                    </h1>
+                    <div class = "content">
+                        <p>
+                            The Weather Underground API uses two different URLs to pull information for our webpage. One URL is used for the current weather condition, and another is used for the forecast. The AJAX response from these URLs returns different parameters regarding both the current weather and the upcoming forecasted weather.
+                        </p>
+                        <p>
+                            TRAIL-E displays icons and other parameters about the present condition to quickly inform the user of the current weather. The area showing upcoming forecast contains three phases (day-night-next day or night-nextday-next night).
+                        </p>
+                        <p>
+                            The main difficulty was getting the city information to AJAX call properly, because it requires different formatting for The United States versus other countries. After the AJAX call was working, it was hard to decide which information was needed for TRAIL-E.
+                        </p>
+                    </div>
+                </article>
+                <article class = "tile is-child box has-text-centered back">
+                    <h1 class = "title head">
+                        About TrailAPI
+                    </h1>
+                    <div class = "content">
+                        <p>
+                            The TrailAPI contains information for thousands of outdoor recreation locations - these include hiking and mountain biking trails, campgrounds, ski resorts, ATV trails, and more!  This API, while impressively robust in trail informational content, did give us some technical issues with its sluggish response times.
+                        <p>
+                            The AJAX response we get from this API is used to create a table of trails nearby. It also provides location information and directions regarding these trails.
+                        </p>
+                        <p>
+                            The API presented some new working challenges, one of them being that the API key was not passed within the URL, but rather in a separate header key within the AJAX call. This presented a new format of AJAX call to learn. Another Challenge of using this API is that it is only available with trail information for the United States.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id= "foot">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p class = "light oswald">
+                    <i class="fas fa-map-signs"></i>
+                    &nbsp; 
+                    Ben, Chelsea, Ned, and Rishikesh
+                    &nbsp;
+                    <i class="fas fa-map-signs"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

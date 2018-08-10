@@ -1,0 +1,37 @@
+#bodyBack {
+    background-color: #003835;
+}
+.navbar {
+    background-color: #44836B;
+}
+#foot {
+    background-color: #006863;
+}
+.light {
+    color: #E7FEFE;
+}
+.back {
+    background-color: #95B1AE;
+}
+.head {
+    color : #005768;
+}
+#map {
+    height: 400px;
+}
+.title {
+    font-family: "Gugi", cursive;
+}
+
+.oswald {
+    font-family: "Oswald", sans-serif;
+}
+
+.subtitle {
+    font-family: "Oswald", sans-serif;
+}
+#searchBox {
+    margin: auto;
+    text-align: center;
+    
+}

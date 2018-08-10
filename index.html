@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Trail-E</title>
+  <!-- Needed Tags-->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bulma StyleSheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+  <!-- FontAwesome -->
+  <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Gugi|Oswald" rel="stylesheet">
+
+  <!-- Firebase Library -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+  <!-- Stylesheet tags -->
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+</head>
+  
+<body id="bodyBack">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class = "container">
+      <div class = "navbar-item has-text-centered">
+        <h1 class="title has-text-centered light is-size-1">
+          <!-- <i class="fas fa-map-signs"></i> -->
+          TRAIL-E
+        </h1>
+        </div>
+      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet is-size-4">
+        <h2 class="subtitle light">
+            <i class="fas fa-map-marker-alt"></i>
+            &nbsp;
+            You are Here:
+            <!-- <span id = "userLocation"></span> -->
+        </h2>
+      </div>
+      <div class = "navbar-item has-text-centered-mobile has-text-centered-tablet is-size-4">
+        <h2 class="subtitle light">
+          <span id = "userLocation"></span>
+        </h2>
+      </div>
+      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald light is-size-4" href="index.html">
+        <i class="fas fa-home"></i>
+        &nbsp;
+        HOME
+      </a>
+      <a class="navbar-item navbar-end has-text-centered-mobile has-text-centered-tablet oswald light is-size-4" href="about.html">
+          <i class="fas fa-book"></i>
+          &nbsp;
+        ABOUT
+      </a> 
+    </div>
+  </nav>
+  <section class = "section" >
+    <section class = "container">
+      <div class="tile is-ancestor">
+        <div class = "tile is-vertical is-parent is-6">
+          <!-- <article class = "tile is-child box has-text-centered back">
+            <h1 class = "title head">
+              <i class="fas fa-map-marker-alt"></i>
+              &nbsp;
+              WHERE ARE YOU AT ?
+            </h1>
+            <div class = "content">
+                <span id = "userLocation"></span>
+            </div>
+          </article> -->
+          <article class = "tile is-child box has-text-centered back">
+            <h1 class = "title head">
+                <i class="fab fa-searchengin"></i>
+                &nbsp;
+                SEARCH FOR A LOCATION IN THE UNITED STATES
+            </h1>
+            <div class = "content" id="searchBox">
+              <div class="field" id="search">
+                <div class="control" id="search">
+                  <input class="inputCity" type="text" placeholder="City" id="cityInput" required>
+                  <input class="inputState" type="text" placeholder="State" id="stateInput" required>
+                  <input type="button" id="searchbtn" value="Search Now!">
+                </div>
+              </div>
+              <div id="alert"></div>
+            </div>
+        </article>
+        <article class = "tile is-child box has-text-centered back">
+          <h1 class = "title head">
+              <i class="far fa-map"></i>
+              &nbsp;
+              WHERE ARE THE TRAILS AT?
+          </h1>
+          <div class = "content">
+            <div id="map">
+              <p>
+                map will go here
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class = "tile is-child box back">
+          <h1 class = "title has-text-centered head">
+              <i class="fas fa-location-arrow"></i>
+              &nbsp;
+              WHAT TRAILS ARE NEARBY?
+          </h1>
+          <div class = "content">
+            <table cellspacing="10" class="table is-bordered is-striped is-fullwidth" id="trailNames">
+              <thead>
+                <tr>
+                  <th>
+                    Trail Name
+                  </th>
+                  <th>
+                    Location
+                  </th>
+                  <th>
+                    Directions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="names0">
+                  </td>
+                  <td id="location0">
+                  </td>
+                  <td id="direction0">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names1">
+                  </td>
+                  <td id="location1">
+                  </td>
+                  <td id="direction1">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names2">
+                  </td>
+                  <td id="location2">
+                  </td>
+                  <td id="direction2">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names3">
+                  </td>
+                  <td id="location3">
+                  </td>
+                  <td id="direction3">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names4">
+                  </td>
+                  <td id="location4">
+                  </td>
+                  <td id="direction4">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names5">
+                  </td>
+                  <td id="location5">
+                  </td>
+                  <td id="direction5">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names6">
+                  </td>
+                  <td id="location6">
+                  </td>
+                  <td id="direction6">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names7">
+                  </td>
+                  <td id="location7">
+                  </td>
+                  <td id="direction7">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names8">
+                  </td>
+                  <td id="location8">
+                  </td>
+                  <td id="direction8">
+                  </td>
+                </tr>
+                <tr>
+                  <td id="names9">
+                  </td>
+                  <td id="location9">
+                  </td>
+                  <td id="direction9">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div> <!-- end one div -->
+      <div class = "tile is-vertical is-parent is-6">
+        <article class = "tile is-child box back" id="weather_box">
+          <h1 class = "title has-text-centered head">
+              <i class="far fa-sun"></i>
+              &nbsp;
+              HOW'S THE WEATHER?
+          </h1>
+          <div class = "content">
+            <div id="currentWeather">
+              <h2 class = "has-text-centered subtitle oswald">
+                  CURRENT WEATHER
+              </h2>
+              <div class = "columns">
+              <div class= "column has-text-centered">
+                <div id="current_condition"></div>
+                <div id="current_img"></div>
+                <div id="current_data"></div> 
+              </div>
+              <div class ="column has-text-centered">
+                <div id="current_data2"></div>                 
+              </div>
+            </div>
+            </div>
+          
+          <div class = "content">
+            <div id="forecastWeather">
+                <h2 class = "has-text-centered subtitle oswald">
+                  UPCOMING WEATHER
+              </h2>
+            <div class = "columns">
+            <div class= "column has-text-centered">
+              <div id="duration1"></div>
+              <div id="forecat_first"></div>
+              <div id="forecat_first_description"></div>
+            </div>
+            <div class ="column has-text-centered">
+              <div id="duration2"></div>
+              <div id="forecat_second"></div>
+              <div id="forecat_second_description"></div>               
+            </div>
+              <div class ="column has-text-centered">
+                <div id="duration3"></div>
+                <div id="forecat_third"></div>
+                <div id="forecat_third_description"></div>             
+              </div>
+            </div>
+            </div>
+        </article>
+        <article class = "tile is-child box back">
+          <h1 class = "title has-text-centered head">
+              <i class="far fa-keyboard"></i>
+              &nbsp;
+              HOW WAS YOUR TRAIL?
+          </h1>
+          <div class = "content has-text-centered">
+            <div class="field">
+              <label class="label">
+                Name
+              </label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Name input" id="userName" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">
+                Trail Name
+              </label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Trail input" id="trailInput" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">
+                Enter Rating 1-10
+              </label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Rating input" id="rating" required>
+              </div>
+            </div>
+              <div class="field">
+                <label class="label">
+                  Message
+                </label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Comments Go Here" id = "userComments"></textarea>
+                </div>
+              </div>
+              <div class="control">
+                <button class="button is-link" id="formSubmit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class = "tile is-child box back">
+            <h1 class = "title has-text-centered head">
+                <i class="fas fa-table"></i>
+                &nbsp;
+                USER COMMENTS
+            </h1>
+            <div class = "content">
+              <table class="table is-bordered" id="firebaseTable">
+                <thead>
+                  <tr>
+                    <th class = "has-text-centered">
+                      Name
+                    </th>
+                    <th class = "has-text-centered">
+                      Trail Name
+                    </th>
+                    <th class = "has-text-centered">
+                      Rating
+                    </th>
+                    <th class= "has-text-centered">
+                      Comments
+                    </th>
+                  </tr>
+                </thead>
+              </tbody>
+            </table>
+            </div>
+          </article>
+        </div>
+    </section>
+  </section>
+
+  <footer class="footer" id= "foot">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p class = "light oswald">
+            <i class="fas fa-map-signs"></i>
+            &nbsp; 
+          Ben, Chelsea, Ned, and Rishikesh
+          &nbsp;
+          <i class="fas fa-map-signs"></i>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Google Maps API Library -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_Dr6eXQfRZGEtWV_8hUBOQllZ0behiIQ&callback=initMap"></script>
+  <script src="assets/javascript/map.js"></script>
+  <script src="assets/javascript/weather.js"></script>
+  <script src="assets/javascript/firebase.js"></script>
+</body>
+</html>
