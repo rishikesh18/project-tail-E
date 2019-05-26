@@ -41,7 +41,7 @@ function getCity(city) {
                     //console.log(x);
                     $("#duration1").html(response.forecast.forecastday[0].date);
                     $("#forecat_first").html(x);
-                    $("#forecat_first_description").html( response.forecast.forecastday[0].day.avgtemp_c+": "+response.forecast.forecastday[0].day.condition.text);
+                    $("#forecat_first_description").html( response.forecast.forecastday[0].day.avgtemp_c+"C:("+response.forecast.forecastday[0].day.condition.text+")");
                     
                     var y = document.createElement("IMG");
                     y.setAttribute("src", response.forecast.txt_forecast.forecastday[1].icon_url);
