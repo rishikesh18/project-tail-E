@@ -18,7 +18,7 @@ function getCity(city) {
 
     //API for wether forecast, use one of the below two api key
     //var queryURL = "https://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
-    var queryURL = "http://api.apixu.com/v1/forecast.json?key=4a55707a9d6e4ecaa35141243190605&q="+city;
+    var queryURL = "https://api.apixu.com/v1/forecast.json?key=4a55707a9d6e4ecaa35141243190605&q="+city;
 
     $.ajax({
         url: queryURL,
@@ -78,7 +78,7 @@ function getCity(city) {
         
     //API url (use one of the two.)
     //var queryURL2 = "https://api.wunderground.com/api/87d18b0282c9396c/conditions/q/"+city+".json"
-    var queryURL2 = "http://api.apixu.com/v1/forecast.json?key=4a55707a9d6e4ecaa35141243190605&q="+city;
+    var queryURL2 = "https://api.apixu.com/v1/forecast.json?key=4a55707a9d6e4ecaa35141243190605&q="+city;
     console.log(queryURL2);
 
     $.ajax({
