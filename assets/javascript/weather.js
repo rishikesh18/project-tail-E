@@ -18,7 +18,7 @@ function getCity(city) {
 
     //API for wether forecast, use one of the below two api key
     //var queryURL = "https://api.wunderground.com/api/87d18b0282c9396c/forecast/q/"+city+".json"; 
-    var queryURL = "https://api.wunderground.com/api/e58ab528f4132c06/forecast/q/"+city+".json";
+    var queryURL = "http://api.apixu.com/v1/forecast.json?key=4a55707a9d6e4ecaa35141243190605&q="+city;
 
     $.ajax({
         url: queryURL,
@@ -27,21 +27,21 @@ function getCity(city) {
         
         .then (function(response) {
             //console.log(response.forecast.txt_forecast.date);
-            if (response.forecast) {
+            if (response) {
                
 
-                    console.log(queryURL);
-                    console.log(response);
-                    console.log(response.forecast.txt_forecast.date);
+                    //console.log(queryURL);
+                    //console.log(response);
+                   // console.log(response.forecast.forecastday[0].day.condition.icon);
                     var x = document.createElement("IMG");
-                    x.setAttribute("src", response.forecast.txt_forecast.forecastday[0].icon_url);
+                    x.setAttribute("src", ("https:"+response.forecast.forecastday[0].day.condition.icon));
                     x.setAttribute("width", "70");
                     x.setAttribute("height", "auto");
-                    x.setAttribute("alt", "The Pulpit Rock");            
-                    console.log(x);
-                    $("#duration1").html(response.forecast.txt_forecast.forecastday[0].title);
+                    x.setAttribute("alt", "Icon");            
+                    //console.log(x);
+                    $("#duration1").html(response.forecast.forecastday[0].date);
                     $("#forecat_first").html(x);
-                    $("#forecat_first_description").html(response.forecast.txt_forecast.forecastday[0].fcttext);
+                    $("#forecat_first_description").html( response.forecast.forecastday[0].day.avgtemp_c+": "+response.forecast.forecastday[0].day.condition.text);
                     
                     var y = document.createElement("IMG");
                     y.setAttribute("src", response.forecast.txt_forecast.forecastday[1].icon_url);
@@ -78,7 +78,7 @@ function getCity(city) {
         
     //API url (use one of the two.)
     //var queryURL2 = "https://api.wunderground.com/api/87d18b0282c9396c/conditions/q/"+city+".json"
-    var queryURL2 = "https://api.wunderground.com/api/e58ab528f4132c06/conditions/q/"+city+".json"
+    var queryURL2 = "http://api.apixu.com/v1/forecast.json?key=4a55707a9d6e4ecaa35141243190605&q="+city;
     console.log(queryURL2);
 
     $.ajax({
@@ -87,24 +87,24 @@ function getCity(city) {
         })
         
         .then (function(response) {
-            if (response.current_observation) {
+            if (response) {
                
                     console.log(response);
                 
                     var x = document.createElement("IMG");
-                    x.setAttribute("src", response.current_observation.icon_url);
+                    x.setAttribute("src", ("https:"+response.current.condition.icon));
                     x.setAttribute("width", "70");
                     x.setAttribute("height", "auto");
                     x.setAttribute("alt", "The Pulpit Rock");        
                     console.log(x);        
-                    $("#current_condition").html(response.current_observation.weather); 
+                    $("#current_condition").html(response.current.condition.text); 
                     $("#current_img").html(x);
-                    $("#current_data").html("<p>Temperature: "+response.current_observation.temperature_string + "</p></br>"+                                           
-                                            "<p>Precipitation today (inch): "+response.current_observation.precip_today_in+ "</p></br>");
-                    $("#current_data2").html("<p>Relative Humidity: "+response.current_observation.relative_humidity + "</p></br>"+
-                                            "<p>Wind: "+response.current_observation.wind_string + "</p></br>"+
-                                            "<p>Visibility: "+response.current_observation.visibility_mi + " miles</p></br>"+
-                                    "<p>Atmospheric Pressure (mb): "+response.current_observation.pressure_mb+ "</p></br>");
+                    $("#current_data").html("<p>Temperature: "+response.current.temp_c + " C</p></br>"+                                           
+                                            "<p>Precipitation today (mm): "+response.current.precip_mm+ "</p></br>");
+                    $("#current_data2").html("<p>Relative Humidity: "+response.current.humidity + "</p></br>"+
+                                            "<p>Wind: "+response.current.wind_kph + " kph</p></br>"+
+                                            "<p>Visibility: "+response.current.vis_km + " Km</p></br>"+
+                                    "<p>Atmospheric Pressure (mb): "+response.current.pressure_mb+ "</p></br>");
             } else {
                 $("#current_condition").text("Cannot get the Weather information. Please re-enter City and State. If you still can not get weather information, please try with different name or nearby city"); 
                 $("#current_img").text("");
