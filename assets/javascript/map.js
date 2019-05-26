@@ -51,7 +51,7 @@ function showPins(lat, lng) {
     url: queryURL,
     dataType: 'json',
     headers: {
-      "X-Mashape-Key": "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw",
+      "X-Mashape-Key": "19fbbd300cmshe1eef2cac5d1a41p1528c2jsn28c5c678b560",
       "Accept": "text/plain"
     },
     method: "get",
@@ -90,7 +90,7 @@ function userSearch(city, state) {
     url: queryURL,
     dataType: 'json',
     headers: {
-      "X-Mashape-Key": "sa38JqfW39msh5UFDYOe0Y44RTAEp1jP9K1jsnk52st50qIIvw",
+      "X-Mashape-Key": "19fbbd300cmshe1eef2cac5d1a41p1528c2jsn28c5c678b560",
       "Accept": "text/plain"
     },
     method: "get",
